@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rick and Morty Explorer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Rick and Morty Explorer</h1>
+
+      <section class="controls">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar personaje por nombre…"
+        />
+
+        <select id="statusSelect" aria-label="Filtrar por estado">
+          <option value="">Estado: cualquiera</option>
+          <option value="alive">Alive</option>
+          <option value="dead">Dead</option>
+          <option value="unknown">Unknown</option>
+        </select>
+
+        <input
+          id="speciesInput"
+          type="text"
+          placeholder="Filtrar por especie (opcional)"
+        />
+
+        <button id="applyBtn">Aplicar</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+      </section>
+
+      <section class="tabs">
+        <button id="tabExplore" class="tab active" type="button">
+          Explorar
+        </button>
+        <button id="tabFavs" class="tab" type="button">Favoritos</button>
+        <button id="tabEpisodes" class="tab" type="button">Episodios</button>
+      </section>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <div
+          id="feedback"
+          class="feedback"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <div id="grid" class="grid" aria-label="Listado de personajes"></div>
+
+        <div id="episodesList" class="episodesPanel" hidden></div>
+
+        <div class="pagination">
+          <button id="prevBtn" class="secondary" type="button">Anterior</button>
+          <span id="pageInfo" class="pageinfo"></span>
+          <button id="nextBtn" class="secondary" type="button">
+            Siguiente
+          </button>
+        </div>
+      </section>
+
+      <aside class="detail" aria-label="Detalle">
+        <div id="detailBox" class="detailBox">
+          <p class="muted">Selecciona un personaje para ver el detalle.</p>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
